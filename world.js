@@ -1,21 +1,31 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const lookupButton = document.getElementById("lookup");
+    const lookupCountryButton = document.getElementById("lookup-country");
+    const lookupCitiesButton = document.getElementById("lookup-cities");
     const resultDiv = document.getElementById("result");
     const countryInput = document.getElementById("country");
 
-    lookupButton.addEventListener("click", function() {
-        const country = countryInput.value.trim(); // get input value
-        const queryUrl = `world.php?country=${encodeURIComponent(country)}`;
+    // Function to perform the AJAX request
+    function fetchData(lookupType) {
+        const country = countryInput.value.trim();
+        const queryUrl = `world.php?country=${encodeURIComponent(country)}&lookup=${lookupType}`;
 
-        // get data from world.php
         fetch(queryUrl)
-            .then(response => response.text()) // parse response as text
+            .then(response => response.text())
             .then(data => {
-                resultDiv.innerHTML = data; // insert result into div
+                resultDiv.innerHTML = data; // Insert response data into the result div
             })
             .catch(error => {
-                console.error("Error:", error);
-                resultDiv.innerHTML = "<p>Error fetching data. Please try again later.</p>";
+                console.error("Error fetching data:", error);
+                resultDiv.innerHTML = "<p>Error retrieving data. Please try again later.</p>";
             });
+    }
+
+    // Event listeners for both buttons
+    lookupCountryButton.addEventListener("click", function() {
+        fetchData(""); // Default lookup for countries
+    });
+
+    lookupCitiesButton.addEventListener("click", function() {
+        fetchData("cities"); // Lookup for cities
     });
 });
