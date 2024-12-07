@@ -1,1 +1,101 @@
-/* Add your own styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000; 
+    color: #fff; 
+}
+
+header {
+    background-color: #1e1e3c; 
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+}
+
+.globe-image {
+    position: absolute; 
+    top: 10px; 
+    left: 10px; 
+    width: 80px; 
+    height: auto; 
+    z-index: 10; 
+    opacity: 0.8; 
+    background-color: transparent; 
+    box-shadow: 0 0 15px rgba(0, 119, 255, 0.8); 
+    border-radius: 50%; 
+}
+
+main {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1); 
+    border-radius: 10px;
+}
+
+/* Controls Section */
+#controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#controls label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/* Search Input Field */
+#controls input[type="search"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    background-color: #2b2b55;
+    color: white;
+}
+
+/* Glow Effect for the Search Button */
+#controls button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50; 
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.8); 
+    transition: box-shadow 0.3s ease, transform 0.3s ease; 
+}
+
+
+#controls button:hover {
+    background-color: #3e8e41;
+    box-shadow: 0 0 25px rgba(0, 255, 0, 1); 
+    transform: scale(1.1); 
+
+
+#result {
+    margin-top: 20px;
+    text-align: left;
+    font-size: 18px;
+}
+
+#result ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#result li {
+    background: #111;
+    color: #fff;
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 4px;
+}
+}
